@@ -1,0 +1,82 @@
+﻿<Window x:Class="CRM.Client.Views.AddLineAndPackageView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM.Client.Views"
+        mc:Ignorable="d"
+        Title="AddLineAndPackageView" Height="450" Width="800" Background="#FFC8C8C8">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid x:Name="grid" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Line Number -" Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="tbxLineNumber" Grid.Column="1" Grid.Row="0" Margin="4"/>
+            <Label x:Name="errorLineNumber" Grid.Column="2" Grid.Row="0" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label Content="Package Type - " Grid.Column="0" Grid.Row="1"/>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" Margin="4">
+                <RadioButton x:Name="rbtnSpecial" GroupName="packageType" Content="Special Price" Checked="SpecialPriceSelected"/>
+                <RadioButton x:Name="rbtnMinutes" GroupName="packageType" Content="Minutes Bank" Checked="MinutesBankSelected"/>
+            </StackPanel>
+            <Label x:Name="errorPackageType" Grid.Column="2" Grid.Row="1" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label Content="Package Name - " Grid.Column="0"  Grid.Row="2"/>
+            <TextBox x:Name="tbxPackageName" Grid.Column="1" Grid.Row="2" Margin="4"/>
+            <Label x:Name="errorPackageName" Grid.Column="2" Grid.Row="2" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label Content="Base Minute Price -" Grid.Column="0" Grid.Row="3"/>
+            <TextBox x:Name="tbxBaseMinutePrice" Grid.Column="1" Grid.Row="3" Margin="4"/>
+            <Label x:Name="errorBaseMinutePrice" Grid.Column="2" Grid.Row="3" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label Content="Base SMS Price - " Grid.Column="0" Grid.Row="4"/>
+            <TextBox x:Name="tbxBaseSMSPrice" Grid.Column="1" Grid.Row="4" Margin="4"/>
+            <Label x:Name="errorBaseSMSPrice" Grid.Column="2" Grid.Row="4" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label x:Name="lblMinuteBankPrice" Content="Minutes Package Price" Grid.Column="0" Grid.Row="5" Visibility="Collapsed"/>
+            <TextBox x:Name="tbxMinuteBankPrice" Grid.Column="1" Grid.Row="5" Margin="4" Visibility="Collapsed"/>
+            <Label x:Name="errorMinuteBankPrice"  Grid.Column="0" Grid.Row="5" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label x:Name="lblMinutesAmount" Content="Amount of Minutes" Grid.Column="0" Grid.Row="6" Visibility="Collapsed"/>
+            <TextBox x:Name="tbxMinutesAmount" Grid.Column="1" Grid.Row="6" Margin="4" Visibility="Collapsed"/>
+            <Label x:Name="errorMinutesAmount"  Grid.Column="0" Grid.Row="6" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label x:Name="lblSMSAmount" Content="Amount of SMS" Grid.Column="0" Grid.Row="7" Visibility="Collapsed"/>
+            <TextBox x:Name="tbxSMSAmount" Grid.Column="1" Grid.Row="7" Margin="4" Visibility="Collapsed"/>
+            <Label x:Name="errorSMSAmount"  Grid.Column="0" Grid.Row="7" Foreground="Red" Visibility="Collapsed"/>
+            
+            <Label x:Name="lblSpecialMinutePrice" Content="Special Minute Price" Grid.Column="0" Grid.Row="5" Visibility="Collapsed"/>
+            <TextBox x:Name="tbxSpecialMinutePrice" Grid.Column="1" Grid.Row="5" Margin="4" Visibility="Collapsed"/>
+            <Label x:Name="errorSpecialMinutePrice"  Grid.Column="0" Grid.Row="5" Foreground="Red" Visibility="Collapsed"/>
+
+            <Label x:Name="lblSpecialSMSPrice" Content="Special SMS Price" Grid.Column="0" Grid.Row="6" Visibility="Collapsed"/>
+            <TextBox x:Name="tbxSpecialSMSPrice" Grid.Column="1" Grid.Row="6" Margin="4" Visibility="Collapsed"/>
+            <Label x:Name="errorSpecialSMSPrice"  Grid.Column="0" Grid.Row="6" Foreground="Red" Visibility="Collapsed"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Cancel" Grid.Column="0" Margin="2" Click="Cancel"/>
+            <Button Content="  Save  " Grid.Column="1" Margin="2" Click="Save"/>
+        </Grid>
+    </StackPanel>
+</Window>
